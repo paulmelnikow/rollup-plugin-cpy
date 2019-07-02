@@ -1,0 +1,7 @@
+extends:
+  - standard
+  - prettier
+  - prettier/standard
+
+parserOptions:
+  sourceType: module
