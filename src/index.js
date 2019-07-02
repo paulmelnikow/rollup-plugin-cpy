@@ -1,18 +1,23 @@
+import { promisify } from 'util'
 import cpy from 'cpy'
 import isObject from 'lodash.isobject'
 import chalk from 'chalk'
-import mkdirp from 'mkdirp'
+import mkdirpCb from 'mkdirp'
 import { name } from '../package.json'
 
-const successMessage = (files, dest) =>
-  console.log(`${chalk.green('Successfully copied')} ${files}  ->  ${dest}`)
+const mkdirp = promisify(mkdirpCb)
 
-const errorMessage = (files, dest, err) =>
+function successMessage(files, dest) {
+  console.log(`${chalk.green('Successfully copied')} ${files}  ->  ${dest}`)
+}
+
+function errorMessage(files, dest, err) {
   console.log(`${chalk.red('Error copying')} ${files}  ->  ${dest}
 ${err}
 `)
+}
 
-const copyFiles = params => {
+async function copyFiles(params) {
   const { files, dest, options } = params
   if (options && !isObject(options)) {
     throw new Error('options param (3rd param after files and dest) should be an object.')
@@ -20,28 +25,29 @@ const copyFiles = params => {
 
   const { verbose = false, ...restOptions } = options || {}
 
-  mkdirp.sync(dest)
-  cpy(files, dest, restOptions)
-    .then(() => {
-      if (verbose) {
-        successMessage(files, dest)
-      }
-    })
-    .catch(err => {
-      throw new Error(errorMessage(files, dest, err))
-    })
+  await mkdirp(dest)
+
+  try {
+    await cpy(files, dest, restOptions)
+  } catch (err) {
+    throw new Error(errorMessage(files, dest, err))
+  }
+
+  if (verbose) {
+    successMessage(files, dest)
+  }
 }
 
 export default function(options) {
   return {
     name,
-    onwrite: () => {
+    async writeBundle() {
       if (Array.isArray(options)) {
-        options.forEach(option => {
-          copyFiles(option)
-        })
+        for (const option of options) {
+          await copyFiles(option)
+        }
       } else {
-        copyFiles(options)
+        await copyFiles(options)
       }
     },
   }
