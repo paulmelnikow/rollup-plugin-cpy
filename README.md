@@ -1,12 +1,11 @@
 # rollup-plugin-cpy
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![MIT License](https://img.shields.io/npm/l/rollup-plugin-cpy.svg?style=flat-square)](https://github.com/shrynx/rollup-plugin-cpy/blob/master/LICENSE)
-![rollup-plugin-cpy-status](https://david-dm.org/shrynx/rollup-plugin-cpy.svg?path=packages/rollup-plugin-cpy)
-[![npm version](https://badge.fury.io/js/rollup-plugin-cpy.svg)](https://badge.fury.io/js/rollup-plugin-cpy)
+[![MIT License](https://img.shields.io/npm/l/rollup-plugin-cpy.svg?style=flat-square)](https://github.com/paulmelnikow/rollup-plugin-cpy/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/rollup-plugin-cpy.svg?style=flat-square)](https://npmjs.com/package/rollup-plugin-cpy)
 
-> rollup plugin to easily copy files and folders.
+Rollup plugin to easily copy files and folders.
 
 ## Installation
 
@@ -83,3 +82,7 @@ plugins: [
 
 ...
 ```
+
+## License
+
+This project is licensed under the MIT license.
