@@ -19,8 +19,3 @@ jobs:
       #     name: Check prettier
       #     command: npm run prettier:check
       #     when: always
-
-      - run:
-          name: Check commit message
-          command: npm run commitmsg
-          when: always
