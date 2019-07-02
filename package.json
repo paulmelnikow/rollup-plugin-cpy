@@ -9,17 +9,16 @@
     "dist"
   ],
   "keywords": [
+    "rollup",
+    "rollup-plugin",
     "rollup copy",
     "rollup plugin copy"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shrynx/rollup-plugin-cpy.git"
-  },
+  "repository": "paulmelnikow/rollup-plugin-cpy",
   "bugs": {
-    "url": "https://github.com/shrynx/rollup-plugin-cpy/issues"
+    "url": "https://github.com/paulmelnikow/rollup-plugin-cpy/issues"
   },
-  "homepage": "https://github.com/shrynx/rollup-plugin-cpy#readme",
+  "homepage": "https://github.com/paulmelnikow/rollup-plugin-cpy#readme",
   "author": "Shriyans Bhatnagar <shriyansbhatnagar@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -84,5 +83,8 @@
   },
   "peerDependencies": {
     "rollup": ">= 1.0"
+  },
+  "engines": {
+    "node": "> 8.0"
   }
 }
