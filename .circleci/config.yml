@@ -20,3 +20,8 @@ jobs:
           name: Check prettier
           command: npm run prettier:check
           when: always
+
+      - run:
+          name: Check that the build runs
+          command: npm run build
+          when: always
