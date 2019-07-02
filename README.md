@@ -10,13 +10,13 @@
 
 ## Installation
 
-* yarn
+- yarn
 
 ```sh
 yarn add -D rollup-plugin-cpy
 ```
 
-* npm
+- npm
 
 ```sh
 npm i -D rollup-plugin-cpy
