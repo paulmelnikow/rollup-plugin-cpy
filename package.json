@@ -79,7 +79,7 @@
     "chalk": "^2.3.2",
     "cpy": "^7.0.1",
     "lodash.isobject": "^3.0.2",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^1.0.3"
   },
   "peerDependencies": {
     "rollup": ">= 1.0"
