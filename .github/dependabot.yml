@@ -1,0 +1,25 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: rollup
+    versions:
+    - 2.35.1
+    - 2.38.3
+  - dependency-name: lint-staged
+    versions:
+    - 10.5.3
+  - dependency-name: commitizen
+    versions:
+    - 4.2.2
+  - dependency-name: "@commitlint/config-conventional"
+    versions:
+    - 11.0.0
+  - dependency-name: "@commitlint/cli"
+    versions:
+    - 11.0.0
